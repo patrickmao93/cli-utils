@@ -20,7 +20,7 @@ func main() {
 	if strings.HasPrefix(data, "0x") {
 		data = data[2:]
 	}
-	if len(data) >= 8 {
+	if len(data) >= 8 && len(data)%64 != 0 {
 		funcSig := data[0:8]
 		data = data[8:]
 		fmt.Println("\nfunction signature:")
